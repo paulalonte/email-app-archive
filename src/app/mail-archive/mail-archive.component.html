@@ -1,0 +1,35 @@
+<div class="container">
+    <main>
+        <!--action bar (search and results indicator)-->
+        <div class="action-bar">
+            <app-search (searchChange)="onSearchChange($event)"></app-search>
+            <h4>Results <span>{{totalResults}}</span> mail(s)</h4>
+        </div>
+    
+        <!--email title/header fields-->
+        <ul class="email-header-fields">
+            <li [ngStyle]="{ display: 'none' }"></li>
+            <li><h4>From</h4><img src="assets/images/icon_arrow01.svg" alt="attachment icon" class="icons up-icon" [ngClass]="{ 'visible': showUpIcon == true}"></li>
+            <li><h4>To</h4></li>
+            <li><h4>Subject</h4></li>
+            <li><h4>Date</h4></li>
+        </ul>
+    
+        <!--email list-->
+        <div class="email-container-list" #emailList>
+            <ul *ngFor="let email of arrayEmails | filter:searchValue;" (click)="onEmailListClick(email)">
+                <img src="assets/images/icon_mail_sp.svg" alt="mail sp icon" class="icons icon-sp" [ngClass]="{ 'visible': showUpIcon == true}">
+                <li><p>{{ email.from }}</p></li>
+                <li><p>{{ email.to }}</p></li>
+                <li><p>{{ email.subject }}</p></li>
+                <li><p>{{ email.date }}</p><img src="assets/images/icon_clip.svg" alt="attachment icon" class="icons attachment-icon" [ngClass]="{ 'visible': email.isAttachement == true}"></li>
+            </ul>
+        </div>
+    
+    </main>
+    
+    <app-email-detail [emailDetail]="emailDetail" (backTriggered)="onBackTriggered($event)" [ngClass]="(isClosed)? 'hide' : 'show'"></app-email-detail>
+</div>
+
+
+

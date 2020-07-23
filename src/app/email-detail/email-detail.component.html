@@ -1,0 +1,37 @@
+<ng-container *ngIf="emailDetail">
+    <main>
+        <div class="action-bar">
+            <div class="back" (click)="onBackClick()">
+                <span><i class="fa fa-arrow-left back-button" aria-hidden="true"></i></span>
+                <span> Back</span>
+            </div>
+
+            <div class="cta-buttons">
+                <div title="reply"><i class="fa fa-reply" aria-hidden="true"></i></div>
+                <div title="forward"><i class="fa fa-share" aria-hidden="true"></i></div>
+                <div title="delete"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
+            </div>
+            
+        </div>
+
+        <div class="subject-container">
+            <h1>{{emailDetail.subject}}</h1>    
+        </div>
+
+        <section class="email-header">
+            <div>
+                <h5><span>From:</span> {{emailDetail.from}}</h5>
+                <h5><span>To:</span> {{emailDetail.to}}</h5>
+            </div>    
+            <div class="date-section">
+                <img src="assets/images/icon_clip.svg" alt="attachment icon" class="icons attachment-icon" [ngClass]="{ 'visible': emailDetail.isAttachement == true}">
+                <p>{{emailDetail.date}}</p>
+            </div>
+        </section>
+        
+        <section class="email-body">
+            <p [innerHTML]="emailDetail.content"></p>
+        </section>
+    </main>
+</ng-container>
+    

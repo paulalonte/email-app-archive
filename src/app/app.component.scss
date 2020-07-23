@@ -1,0 +1,12 @@
+@import 'scss/variables';
+
+header {
+    padding: calc(#{$gap * 0.5}) $gap;
+    border-bottom: 1px solid #eee;
+    margin-bottom: calc(#{$gap * 0.5});
+
+    h1 {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,8 @@
+<div class="search-container">
+    <img src="assets/images/icon_calender.svg" alt="calendar" class="icons calendar-icon" (click)="picker.open()">
+    <mat-datepicker #picker></mat-datepicker>
+    <input type="text" [matDatepicker]="picker" (input)="onDateChange($event)" #inputSearch>
+    <div class="magnify" (click)="onSearchClick()">
+        <img src="assets/images/icon_search.svg" class="icons search-icon">    
+    </div>
+</div>

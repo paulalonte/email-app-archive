@@ -1,0 +1,97 @@
+@mixin mobile-only {
+    @media(max-width: 668px) {
+        @content;
+    }
+}
+
+@mixin tablet-only {
+    @media(min-width: 669px) and (max-width: 780px) {
+        @content;
+    }
+}
+
+@mixin styleEmailFieldBody() {
+    @extend %no-list-style-type;
+    @extend %display-flex;
+
+    li {
+        flex-basis: 20%;
+
+        &:nth-child(4) {
+            flex-basis: 50%;
+        }
+
+        &:nth-child(5) {
+            flex-basis: 10%;
+        }
+    }
+}
+
+@mixin setToEvenWidth() {
+    li {
+        flex-basis: 25% !important;
+
+        &:nth-child(4) {
+            flex-basis: 35% !important;;
+        }
+
+        &:nth-child(5) {
+            flex-basis: 10% !important;
+        }
+    }
+}
+
+@mixin mobileView {
+    .email-header-fields {
+        li {
+            flex-basis: auto !important;
+            border-right: 1px solid #999;
+            padding: 0 10px;
+
+            &:nth-child(2) {
+                padding: 0 20px 0 0;
+            }
+
+            img.icons.up-icon {
+                width: 12px;
+                right: 3px !important;
+                top: 4px !important;
+            }
+        }
+    }
+
+    %fromToAdjustment {
+        padding-left: 20px;
+    }
+
+    .email-container-list {
+        ul {
+            flex-direction: column;
+
+            li {
+                font-size: 0.9em;
+                padding: 4px 0;
+
+                &:nth-child(1) {
+                    font-weight: bold;
+                }
+
+                &:nth-child(2) {
+                    font-weight: 300;
+                    @extend %fromToAdjustment;
+                }
+
+                &:nth-child(3) {
+                    font-size: 1em;
+                    @extend %fromToAdjustment;
+                }
+
+                &:nth-child(5) {
+                    position: absolute !important;
+                    right: 12px !important;
+                    top: 26px !important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+@import '../scss/variables';
+
+main {
+    padding: $gap;
+    position: fixed;
+    top: 0;
+    background: white;
+    overflow: scroll;
+    height: 100vh;
+
+    .action-bar {
+        border-bottom: 1px solid #eee;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+
+        .back {
+            cursor: pointer;
+            .back-button {
+                font-size: 1.2em;
+            }
+        }
+
+        .cta-buttons {
+            display: flex;
+
+            div {
+                margin-left: 20px;
+                cursor: pointer;
+            }
+        }
+        
+    }
+
+    .subject-container {
+        border-bottom: 1px solid $secondary-color;
+        padding: calc(#{$gap} * 0.5) 0;
+
+        h1 {
+            font-size: 1.5em;
+        }
+    }
+
+    .email-header {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+
+        h5 {
+            margin-bottom: 14px;
+            font-weight: 300;
+            span {
+                font-weight: bold;
+            }
+        }
+
+        .date-section {
+            position: relative;
+            .attachment-icon {
+                position: absolute;
+                left: -26px;
+                top: 0;
+                width: 15px;
+                display: none;
+            }
+        }
+    }
+
+    .email-body {
+        padding: $gap 0;
+        font-weight: 300;
+        line-height: 24px;
+    }
+}
