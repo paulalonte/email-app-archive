@@ -1,3 +1,9 @@
+@import 'variables';
+
+@mixin buttonHover {
+    color: $hover-color;
+}
+
 @mixin mobile-only {
     @media(max-width: 668px) {
         @content;
@@ -41,6 +47,83 @@
     }
 }
 
+@mixin fromToAdjustment {
+    padding-left: 20px;
+}
+
+@mixin desktopView {
+    .email-header-fields {
+        border: 1px solid $secondary-color;
+        background: #eee;
+        padding: 15px;
+
+        @include styleEmailFieldBody();
+
+        li {
+            position: relative;
+
+            img.icons.up-icon {
+                position: absolute;
+                right: 4 !important;
+                top: 3 !important;
+                display: none;
+            }
+        }
+    }
+
+    .email-container-list {
+        ul {
+            @include styleEmailFieldBody();
+            padding: 24px 15px;
+            border-bottom: 1px solid #d1d1e0;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            position: relative;
+
+            &:hover {
+                background: $primary-color !important;
+                color: #003e80;
+            }
+
+            &:nth-child(even) {
+                background: $tertiary-color;
+            }
+
+            img.icons.icon-sp {
+                position: absolute;
+                width: 12px;
+                top: 30px;
+                display: none;
+            }
+
+            li {
+                position: relative;
+
+                .attachment-icon {
+                    position: absolute;
+                    left: -30px;
+                    top: 0;
+                    display: none;
+                }
+
+                &:nth-child(4) {
+                    white-space: nowrap; 
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    p {
+                        white-space: nowrap; 
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        width: 80%;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
 @mixin mobileView {
     .email-header-fields {
         li {
@@ -60,10 +143,6 @@
         }
     }
 
-    %fromToAdjustment {
-        padding-left: 20px;
-    }
-
     .email-container-list {
         ul {
             flex-direction: column;
@@ -78,12 +157,12 @@
 
                 &:nth-child(2) {
                     font-weight: 300;
-                    @extend %fromToAdjustment;
+                    @include fromToAdjustment();
                 }
 
                 &:nth-child(3) {
                     font-size: 1em;
-                    @extend %fromToAdjustment;
+                    @include fromToAdjustment();
                 }
 
                 &:nth-child(5) {

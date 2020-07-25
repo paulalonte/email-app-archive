@@ -1,4 +1,5 @@
 @import '../scss/variables';
+@import '../scss/mixins';
 
 main {
     padding: $gap;
@@ -7,6 +8,7 @@ main {
     background: white;
     overflow: scroll;
     height: 100vh;
+
 
     .action-bar {
         border-bottom: 1px solid #eee;
@@ -18,6 +20,10 @@ main {
             cursor: pointer;
             .back-button {
                 font-size: 1.2em;
+            }
+
+            &:hover {
+                @include buttonHover();
             }
         }
 
