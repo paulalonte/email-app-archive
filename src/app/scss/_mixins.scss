@@ -165,6 +165,10 @@
                     @include fromToAdjustment();
                 }
 
+                &:nth-child(4) {
+                    font-size: 1em;
+                }
+
                 &:nth-child(5) {
                     position: absolute !important;
                     right: 12px !important;
