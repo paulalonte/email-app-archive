@@ -9,7 +9,7 @@
         <!--email title/header fields-->
         <ul class="email-header-fields">
             <li [ngStyle]="{ display: 'none' }"></li>
-            <li><h4>From</h4><img src="assets/images/icon_arrow01.svg" alt="attachment icon" class="icons up-icon" [ngClass]="{ 'visible': showUpIcon == true}"></li>
+            <li><h4>From</h4><img src="assets/images/icon_arrow01.svg" (click)="fromClick()" alt="up icon" class="icons up-icon" [ngClass]="{ 'visible': showUpIcon == true}"></li>
             <li><h4>To</h4></li>
             <li><h4>Subject</h4></li>
             <li><h4>Date</h4></li>

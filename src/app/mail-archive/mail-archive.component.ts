@@ -40,6 +40,16 @@ export class MailArchiveComponent implements OnInit {
     });
   }
 
+  fromClick(): void {
+    this.arrayEmails.sort(this.compareFrom);
+  }
+
+  compareFrom(a: any, b: any) {
+    if (a.from < b.from) { return -1; }
+    if (a.from > b.from) { return 1; }
+    return 0;
+  }
+
   checkIfShowUpIcon() {
     this.showUpIcon = (this.innerWidth <= 668) ? true : false;
   }

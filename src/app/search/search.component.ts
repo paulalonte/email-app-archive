@@ -1,5 +1,4 @@
 import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
-import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-search',
@@ -18,7 +17,6 @@ export class SearchComponent {
   onDateChange(event: any) {
     this.searchValue = event.target.value;
     this.searchChange.emit(this.searchValue);
-    console.log('date change');
   }
 
   onSearchClick() {
