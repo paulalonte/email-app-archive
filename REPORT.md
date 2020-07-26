@@ -9,6 +9,10 @@
 	> Component based project
 	>
 	> Used @Input(), @Output(), EventEmitters to receive and send data 
+	>
+	> You can filter the email list by 'from', 'to', 'subject' and 'date'
+	>
+	> You can sort email by 'from' when in mobile view using the arrow icon
 - Used Angular Material specifically for 'date picker'
 - Used SCSS for styling
 	
